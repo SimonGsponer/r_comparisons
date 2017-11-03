@@ -47,5 +47,5 @@ Just like for the test datasets I usually create, I generated random numbers by 
 
 The relative performance of these 3 functions depends on two aspects. On one side, the row numbers are likely to be an important determinant. On the other side, there is some variability regarding the execution time it takes to run the functions, since a computer does a bunch of other tasks at the same time. Therefore, **the functions were compared for several sizes** of the datasets (namely **10K, 100K, 1M, and 100M**), and **each function was, for a given dataset size, run 50 times**. A documented version of the algorithm used for this comparison can be found in …
 
-
-
+Results: 
+![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
