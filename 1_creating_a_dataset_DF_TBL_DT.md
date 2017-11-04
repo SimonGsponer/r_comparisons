@@ -59,23 +59,23 @@ _Chart 1_
 
 There are a couple of striking findings:
 
-* First of all, `data.frame()`does a pretty good job. This was rather unexpected to me because innovation in R usually occurs in packages, which gives Base R functions a connotation of inefficiency & outdatedness.
+* First of all, **`data.frame()`does a pretty good job**. This was rather unexpected to me because innovation in R usually occurs in packages, which gives Base R functions a connotation of inefficiency & outdatedness.
 
-* `data.table()`, which is a function that comes from a big-data package, took the longest for big data. At the moment, I don't know why this is the case, so I'll update this bullet point as soon as I know more about this.
+* **`data.table()`**, which is a function that comes from a big-data package, **took the longest for big data**. At the moment, I don't know why this is the case, so I'll update this bullet point as soon as I know more about this.
 
 * While `tibble()` needs (relatively speaking) much more time than the other two functions for a smallish dataset, it performs well for larger ones.
 
-The relative slowness of `data.table()`made me wonder if it would be more efficient to create a test data.table by wrapping `data.table()`around `data.frame()` or `tibble()`, i.e. to create a data.frame or tibble first and then coercing it into a data.table. Another 45 499 500 000 random numbers later, the answer is:
+The **relative slowness** of **`data.table()`** made me wonder if it would be more efficient to create a test data.table by **wrapping `data.table()`around `data.frame()` or `tibble()`**, i.e. to create a data.frame or tibble first and then coercing it into a data.table. Another 45 499 500 000 random numbers later, the answer is:
 
 _Chart 2_
 
 ![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results3.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
 
-nope. The wrapping method is only marginally faster for the scenario using 100k observations. Notwithstanding, it is interesting to see that coercing a data.frame or a tibble into a data.table does not require much computational power.
+**nope**. The wrapping method is only marginally faster for the scenario using 100k observations. Notwithstanding, it is interesting to see that **coercing** a data.frame or a tibble into a data.table **doesn't require much computational power**.
 
 ## A few concluding words
 
-After generating more than 90 bn random numbers, is there anything to infer from all this? The probably most important finding is that `data.frame()` is not slower in creating datasets than its counterparts in the tidyverse and data.table packages. Also, coercing a tibble or data.frame into a data.table requires little to no computational time.
+After generating more than 90 bn random numbers, is there anything to infer from all this? The probably **most important finding** is that **`data.frame()` is not slower in creating datasets than its counterparts** in the tidyverse and data.table packages. Also, **coercing** a tibble or data.frame into a data.table requires **little to no computational time**.
 
 Whether one uses `data.frame()`, `tibble()`, or `data.table()` doesn't seem to matter too much. Most R users do not have to generate datasets in such frequency that the time difference between the three functions matters (correct me if I'm wrong!). Moreover, whether to use a data.frame, a tibble, or a data.table depends obviously on the overriding purpose of ones work. 
 
