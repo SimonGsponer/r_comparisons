@@ -70,7 +70,7 @@ The relative slowness of `data.table()`made me wonder if it would be more effici
 
 
 Here we go again: 
-![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results2_edit.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
+![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results3.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
 
 
 ## A few concluding words
