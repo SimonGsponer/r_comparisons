@@ -53,7 +53,9 @@ Chart 1:
 
 ![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
 
-
+From this chart, there are a couple of striking findings:
+*First of all, `data.frame()`does a pretty good job. This was rather unexpected to me because innovation in R usually occurs through packages, which gives Base R functions a connotation of inefficiency & outdatedness.
+*`data.table()`, which is a function that comes from a big-data package, took the longest for big data. At the moment, I don't know why this is the case, so I'll update this bullet point as soon as I know more about this.
 
 
 Here we go again: 
