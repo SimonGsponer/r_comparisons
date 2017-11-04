@@ -1,4 +1,4 @@
-# 1: Creating a Test Dataset - data.frame vs. tibble vs. data.table
+# Comparison 1: Creating a Test Dataset - data.frame vs. tibble vs. data.table
 
 ## Intro
 
