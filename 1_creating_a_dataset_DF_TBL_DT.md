@@ -77,7 +77,7 @@ nope. The wrapping method is only marginally faster for the scenario using 100k 
 
 After generating more than 90 bn random numbers, is there anything to infer from all this? The probably most important finding is that `data.frame()` is not slower in creating datasets than its counterparts in the tidyverse and data.table packages. Also, coercing a tibble or data.frame into a data.table requires little to no computational time.
 
-Whether one uses data.frame(), tibble(), or data.table() doesn't seem to matter too much. Most R users do not have to generate datasets in such frequency that the time difference between the three functions matters (correct me if I'm wrong!). Moreover, whether to use a data.frame, a tibble, or a data.table depends obviously on the overriding purpose of ones work. 
+Whether one uses `data.frame()`, `tibble()`, or `data.table() doesn't seem to matter too much. Most R users do not have to generate datasets in such frequency that the time difference between the three functions matters (correct me if I'm wrong!). Moreover, whether to use a data.frame, a tibble, or a data.table depends obviously on the overriding purpose of ones work. 
 
 The comparisons that are going to follow will tackle more complex issues, and I will assess whether using Base R, the tidyverse, or data.table leads to the most efficient solution.
 
