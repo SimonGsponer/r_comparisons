@@ -1,6 +1,6 @@
-# Create Datasets
+# 1: Creating a Test Dataset - data.frame vs. tibble vs. data.table
 
-## data.frame vs. tibble vs. data.table
+## Intro
 
 Currently, I am reading [R for Data Science](http://r4ds.had.co.nz/) to immerse myself in the tidyverse. The tidyverse includes many functions that represent updated, faster versions of their Base R counterparts. According to the authors, `read_csv()` is about 10x faster than `read.csv()`. Also, the tidyverse uses its own kind of data frames, the tibble.
 
