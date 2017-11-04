@@ -49,3 +49,8 @@ The relative performance of these 3 functions depends on two aspects. On one sid
 
 Results: 
 ![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
+
+Here we go again: 
+![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results2.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
+
+
