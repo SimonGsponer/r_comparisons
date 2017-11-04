@@ -6,7 +6,7 @@ Currently, I am reading [R for Data Science](http://r4ds.had.co.nz/) to immerse 
 
 When I want to check whether the stuff I code actually does what it is supposed to do, I usually use test datasets, consisting of random numbers, for evaluation. After reading about tibbles, I was curious: Similarly to `read_csv()`, **does creating a dataset by using `tibble()`require less computation time than using `data.frame()` ?**
 
-This prompted me to start a little experiment, in which I wanted to formally examine this question. Furthermore, I was interested in how tibbles and data.frames compare to data.tables. Similar to the tidyverse, the data.table package (which is well-known for its efficiency) comes with its own data frame. Thus, the question was: **which one is the fastes in creating a test dataset: `data.frame()`, `tibble()`, or `data.table()` ?**
+Furthermore, I was interested in how tibbles and data.frames compare to data.tables. Similar to the tidyverse, the data.table package (which is well-known for its efficiency) comes with its own data frame. Thus, I examined the following quetion: **which one is the fastest in creating a test dataset: `data.frame()`, `tibble()`, or `data.table()` ?**
 
 First, I created a function that crates a 3-vector dataset for each of these three data frames, where the number of rows is subject to a parameter (i.e. `n`). The functions look like this:
 
