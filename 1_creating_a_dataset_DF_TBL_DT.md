@@ -61,6 +61,10 @@ From this chart, there are a couple of striking findings:
 
 * While `tibble()` needs (relatively speaking) much more time than the other two functions for a smallish dataset, it performs well for larger ones.
 
+The relative slowness of `data.table()`made me wonder if it would be more efficient to create a test data.table by wrapping `data.table()`around `data.frame()` or `tibble()`, i.e. to create a data.frame or tibble first and then coercing it into a data.table. 45 499 500 000 random numbers later, the answer is:
+
+
+
 Here we go again: 
 ![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results2_edit.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
 
