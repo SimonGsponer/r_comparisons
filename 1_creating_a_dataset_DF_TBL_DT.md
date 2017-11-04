@@ -55,10 +55,11 @@ Chart 1:
 
 From this chart, there are a couple of striking findings:
 
-*First of all, `data.frame()`does a pretty good job. This was rather unexpected to me because innovation in R usually occurs through packages, which gives Base R functions a connotation of inefficiency & outdatedness.
+* First of all, `data.frame()`does a pretty good job. This was rather unexpected to me because innovation in R usually occurs through packages, which gives Base R functions a connotation of inefficiency & outdatedness.
 
-*`data.table()`, which is a function that comes from a big-data package, took the longest for big data. At the moment, I don't know why this is the case, so I'll update this bullet point as soon as I know more about this.
+* `data.table()`, which is a function that comes from a big-data package, took the longest for big data. At the moment, I don't know why this is the case, so I'll update this bullet point as soon as I know more about this.
 
+* While `tibble()` needs (relatively speaking) much more time than the other two functions for a smallish dataset, it performs well for larger ones.
 
 Here we go again: 
 ![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results2_edit.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
