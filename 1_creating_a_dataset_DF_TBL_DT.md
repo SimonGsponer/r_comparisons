@@ -57,7 +57,7 @@ Chart 1:
 
 ![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
 
-From this chart, there are a couple of striking findings:
+There are a couple of striking findings:
 
 * First of all, `data.frame()`does a pretty good job. This was rather unexpected to me because innovation in R usually occurs through packages, which gives Base R functions a connotation of inefficiency & outdatedness.
 
@@ -71,7 +71,7 @@ Chart 2:
 
 ![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results3.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
 
-nope. The wrapping method is only marginally faster for the scenario using 100k observations. Notwithstanding, it is facinating that coercing a data.frame or a tibble into a data.table does not require much computational power.
+nope. The wrapping method is only marginally faster for the scenario using 100k observations. Notwithstanding, it is fascinating that coercing a data.frame or a tibble into a data.table does not require much computational power.
 
 ## A few concluding words
 
