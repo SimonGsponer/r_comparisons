@@ -49,6 +49,7 @@ The relative performance of these 3 functions depends on two aspects. On one sid
 
 For this investigation, the execution algorithm generated **45 499 500 000** (i.e. 45 bn) **random numbers!** The chart below shows the average computation time (the "whiskers" represent 95% confidence intervals of the average time) the three functions required for each of the four dataset sizes. 
 
+Chart 1:
 ![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
 
 
