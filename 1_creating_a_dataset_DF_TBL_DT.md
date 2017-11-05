@@ -2,9 +2,9 @@
 
 ## Intro
 
-Currently, I am reading [R for Data Science](http://r4ds.had.co.nz/) to immerse myself in the tidyverse. The tidyverse includes many functions that represent updated, faster versions of their Base R counterparts. According to the authors of the book, `read_csv()` is about 10x faster than `read.csv()`. Also, the tidyverse uses its own kind of data frames, the tibble.
+Currently, I am reading [R for Data Science](http://r4ds.had.co.nz/) to immerse myself in the tidyverse. The tidyverse includes many functions that represent updated, faster versions of their Base R counterparts. According to the authors of this book, `read_csv()` is about 10x faster than `read.csv()`. Also, the tidyverse uses its own kind of data frames, the tibble.
 
-When I want to check whether the stuff I code actually does what it is supposed to do, I usually use test datasets for evaluation, which consist of random numbers. After reading about tibbles, I was curious; similarly to `read_csv()`, **does creating a dataset by using `tibble()`require less computation time than using `data.frame()` ?**
+When I want to check whether the stuff I code actually does what it is supposed to do, I usually use test datasets consisting of random numbers. After reading about tibbles, I was curious; similarly to `read_csv()`, **does creating a dataset by using `tibble()`require less computation time than using `data.frame()` ?**
 
 Furthermore, I was interested in how tibbles and data.frames compare to data.tables. The data.table package (which is well-known for its efficiency) comes with its own data frame too. Thus, I examined the following question: **which one is the fastest in creating a test dataset—`data.frame()`, `tibble()`, or `data.table()` ?**
 
