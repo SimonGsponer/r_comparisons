@@ -75,7 +75,7 @@ _Chart 2_
 
 ## A few concluding words
 
-After generating more than 90 bn random numbers, is there anything to infer from all this? The probably **most important finding** is that **`data.frame()` is not slower in creating datasets than its counterparts** in the tidyverse and data.table packages. Also, **coercing** a tibble or data.frame into a data.table requires **little to no computational time**.
+After generating more than 90 bn random numbers, is there anything to learn from all this? The probably **most important finding** is that **`data.frame()` is not slower in creating datasets than its counterparts** from the tidyverse and data.table packages. Also, **coercing** a tibble or data.frame into a data.table requires **little computational time**.
 
 Whether one uses `data.frame()`, `tibble()`, or `data.table()` doesn't seem to matter too much. Most R users do not have to generate datasets in such frequency that the time difference between the three functions matters (correct me if I'm wrong!). Moreover, whether to use a data.frame, a tibble, or a data.table depends obviously on the overriding purpose of ones work. 
 
