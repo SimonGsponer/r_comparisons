@@ -1,7 +1,7 @@
-# r_comparisons
-Welcome to the r_comparisons repository! 
+**Welcome to the r_comparisons repository! In a nutshell, this repository is about looking at and comparing different means that achieve the same objective in R.**
 
-For probably every conceivable goal, there are several means that achieve it. This repository discusses different approaches that tackle the same problem in R.
+# Comparison 1: data.frame() vs. tibble() vs. data.table()
+The first comparison investigates whether data.frames, tibbles, and data.tables differ in the computational time they need for creating a dataset with random numbers. Read the post [here](comparison1_DF_TBL_DT.md)
 
 **This repository bases on the following sources:**
 
