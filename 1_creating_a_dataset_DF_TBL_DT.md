@@ -79,6 +79,6 @@ After generating more than 90 bn random numbers, is there anything to learn from
 
 Whether one uses `data.frame()`, `tibble()`, or `data.table()` doesn't seem to matter too much. Most R users do not have to generate datasets in such frequency that the time difference between the three functions matters (correct me if I'm wrong!). Moreover, whether to use a data.frame, a tibble, or a data.table depends obviously on the overriding purpose of ones work. 
 
-The comparisons that are going to follow will tackle more complex issues, and I will assess whether using Base R, the tidyverse, or data.table leads to the most efficient solution.
+The comparisons that are going to follow will tackle more complex problems, and I will assess whether using Base R, the tidyverse, or data.table leads to the most efficient solution.
 
 Stay tuned!
