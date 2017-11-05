@@ -1,6 +1,13 @@
 # Comparison 1: Creating a Test Dataset - data.frame vs. tibble vs. data.table
 
-## Intro
+Estimated reading time: 
+
+1. [Intro](#introduction)
+2. [Method](#method)
+3. [Results](#results)
+4. [A few concluding words](#conclusion)
+
+## Intro <a name="introduction"></a>
 
 Currently, I am reading [R for Data Science](http://r4ds.had.co.nz/) to immerse myself in the tidyverse. The tidyverse includes many functions that represent updated, faster versions of their Base R counterparts. According to the authors of this book, `read_csv()` is about 10x faster than `read.csv()`. Also, the tidyverse uses its own kind of data frames, the tibble.
 
@@ -8,7 +15,7 @@ When I want to check whether the stuff I code actually does what it is supposed 
 
 Furthermore, I was interested in how tibbles and data.frames compare to data.tables. The data.table package (which is well-known for its efficiency) comes with its own data frame too. Thus, I examined the following question: **which one is the fastest in creating a test dataset—`data.frame()`, `tibble()`, or `data.table()` ?**
 
-## Method
+## Method <a name="method"></a>
 
 First, I created a function that creates a 3-vector dataset for each of these three data frames, where the number of rows is subject to a parameter (i.e. `n`). The functions look like this:
 
@@ -47,9 +54,9 @@ dtb_creator <- function(n){
 
 Just like for the test datasets I usually create, I generated random numbers by the use of distribution functions. Note that the distribution functions, as well as the corresponding parameters, are completely arbitrary.
 
-The relative performance of these 3 functions depends on two aspects. First, the row numbers are likely to be an important determinant. Second, there is some variability regarding the execution time it takes to run the functions, since a computer does a bunch of other tasks at the same time. Therefore, **the functions were compared for several sizes** of the datasets (namely **10K, 100K, 1M, and 100M**), and **each function was, for a given dataset size, run 50 times**. A documented version of the algorithm used for this comparison can be found in the Rscript folder [(click here)](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/Rscripts/Comparison1.R)
+The relative performance of these 3 functions depends on two aspects. First, the row numbers are likely to be an important determinant. Second, there is some variability regarding the execution time it takes to run the functions, since a computer does a bunch of other tasks at the same time. Therefore, **the functions were compared for several sizes** of the datasets (namely **10K, 100K, 1M, and 100M**), and **each function was, for a given dataset size, run 50 times**. A documented version of the algorithm used for this comparison can be found in the Rscript folder [(click here)](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/Rscripts/Comparison1.R).
 
-## Results
+## Results <a name="results"></a>
 
 For this investigation, the execution algorithm generated **45 499 500 000** (i.e. 45 bn) **random numbers!** The chart below shows the average computation time (the "whiskers" represent 95% confidence intervals of the average time) the three functions required for each of the four dataset sizes. 
 
@@ -73,7 +80,7 @@ _Chart 2_
 
 **nope**. The wrapping method is only marginally faster for the scenario using 100k observations. Notwithstanding, it is interesting to see that **coercing** a data.frame or a tibble into a data.table **doesn't require much computational power**.
 
-## A few concluding words
+## A few concluding words <a name="conclusion"></a>
 
 After generating more than 90 bn random numbers, is there anything to learn from all this? The probably **most important finding** is that **`data.frame()` is not slower in creating datasets than its counterparts** from the tidyverse and data.table packages. Also, **coercing** a tibble or data.frame into a data.table requires **little computational time**.
 
