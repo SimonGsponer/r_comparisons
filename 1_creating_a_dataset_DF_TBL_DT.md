@@ -55,7 +55,7 @@ dtb_creator <- function(n){
 
 Just like for the test datasets I usually create, I generated random numbers by the use of distribution functions. Note that the distribution functions, as well as the corresponding parameters, are completely arbitrary.
 
-The relative performance of these 3 functions depends on two aspects. First, the row numbers are likely to be an important determinant. Second, there is some variability regarding the execution time it takes to run the functions, since a computer does a bunch of other tasks at the same time. Therefore, **the functions were compared for several sizes** of the datasets (namely **10K, 100K, 1M, and 100M**), and **each function was, for a given dataset size, run 50 times**. A documented version of the algorithm used for this comparison can be found in the Rscript folder [(click here)](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/Rscripts/Comparison1.R).
+The relative performance of these 3 functions depends on two aspects. First, the row numbers are likely to be an important determinant. Second, there is some variability regarding the execution time it takes to run the functions, since a computer does a bunch of other tasks at the same time. Therefore, **the functions were compared for several sizes** of the datasets (namely **10K, 100K, 1M, and 100M**), and **each function was, for a given dataset size, run 50 times**. A documented version of the algorithm used for this comparison can be found in the Rscript folder [(click here)](https://github.com/SimonGsponer/r_comparisons/blob/master/Rscripts/Comparison1.R).
 
 ## Results <a name="results"></a>
 
@@ -63,7 +63,7 @@ For this investigation, the execution algorithm generated **45 499 500 000** (i.
 
 _Chart 1_
 
-![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
+![alt text](https://github.com/SimonGsponer/r_comparisons/blob/master/images/Comparison1_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
 
 There are a couple of striking findings:
 
@@ -77,7 +77,7 @@ The **relative slowness** of **`data.table()`** made me wonder if it would be mo
 
 _Chart 2_
 
-![alt text](https://github.com/SimonGsponer/r_comparisons/blob/first_comparison/images/Comparison1_Results3.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
+![alt text](https://github.com/SimonGsponer/r_comparisons/blob/master/images/Comparison1_Results3.jpeg "Computation Time for Creating a 3-Column Dataset - Second Round")
 
 **nope**. The wrapping method is only marginally faster for the scenario using 100k observations. Notwithstanding, it is interesting to see that **coercing** a data.frame or a tibble into a data.table **doesn't require much computational power**.
 
