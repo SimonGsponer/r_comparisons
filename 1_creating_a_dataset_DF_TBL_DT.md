@@ -1,6 +1,6 @@
 # Comparison 1: Creating a Test Dataset - data.frame vs. tibble vs. data.table
 
-Estimated reading time: 
+Estimated reading time: 3min 34sec
 
 Overview
 1. [Intro](#introduction)
