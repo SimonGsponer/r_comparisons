@@ -3,7 +3,7 @@
 library(tidyverse) #for tibble()
 library(data.table) #for data.table()
 library(tictoc) #to measure the computational time
-library(beepr) #since creating more than 45bn random numbers takes some minutes, this package let me know when the computations were done so I didn't had to stare at the screen all the time
+library(beepr) #since creating more than 45bn random numbers takes some minutes, this package let me know when the computations were done so I didn't have to stare at the screen all the time
 
 
 #### FUNCTIONS
