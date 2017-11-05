@@ -59,7 +59,7 @@ _Chart 1_
 
 There are a couple of striking findings:
 
-* First of all, **`data.frame()`does a pretty good job**. This was rather unexpected to me because innovation in R usually occurs in packages, which gives Base R functions a connotation of inefficiency & outdatedness.
+* First of all, **`data.frame()` does a pretty good job**. This was rather unexpected to me because innovation in R usually occurs in packages, which gives Base R functions a connotation of inefficiency & outdatedness.
 
 * **`data.table()`**, which is a function that comes from a big-data package, **took the longest for big data**. At the moment, I don't know why this is the case, so I'll update this bullet point as soon as I know more about this.
 
