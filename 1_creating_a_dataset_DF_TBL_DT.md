@@ -2,7 +2,7 @@
 
 Estimated reading time: 
 
-Table of Contents
+Overview
 1. [Intro](#introduction)
 2. [Method](#method)
 3. [Results](#results)
