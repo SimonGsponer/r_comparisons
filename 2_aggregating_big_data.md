@@ -14,13 +14,13 @@ Hi there and welcome to comparison № 2!
 
 The [World Development Indicators dataset](https://data.worldbank.org/data-catalog/world-development-indicators) of the World Bank, which has about 400 000 rows, is the largest dataset I have ever worked with. While it is certainly too big for MS Excel, it's still far from being big data. For this comparison, I wanted to venture into the (for me personally) uncharted waters of analysing truly big data, which is why I came up with the following question: **How well do Base R, the [tidyverse package](https://www.tidyverse.org/), and the [data.table](https://github.com/Rdatatable/data.table/wiki) package perform when aggregating information from a dataset with 30 million rows?**  
 
-*This comparison revolves around big data—but what is big data in the first place? Unfortunately, there is not really an official definition, but a practical one would describe big data as data that is so large that it doesn't fit into the RAM (the working memory) of your computer. Thus, this means that big data is probably one of the most relative terms of the computer science jargon: whether data is truly big depends on the machine one uses for processing data (my mainstream Apple laptop has 4 GB of RAM, the supercomputer of IBM has [16 TB of RAM](https://www.csee.umbc.edu/2011/02/is-watson-the-smartest-machine-on-earth/)) and the current year (the computer my family owned in 2001 had 256 MB of RAM, meaning that many datasets I use these days were big data back then). Therefore, when I talk about big data in this comparison, I mean files that require swap memory when I load them into my 4GB RAM. By the same token, everything one may conclude from this comparison applies primarily to 'ordinary computers'.*
+*This comparison revolves around big data—but what is big data in the first place? Unfortunately, there is not really an official definition, but a practical one would describe big data as data that is so large that it doesn't fit into the RAM (the working memory) of your computer. Thus, this means that big data is probably one of the most relative terms of the computer science jargon: whether data is truly big depends on the machine one uses for processing data (my mainstream Apple laptop has 4 GB of RAM, the supercomputer of IBM has [16 TB of RAM](https://www.csee.umbc.edu/2011/02/is-watson-the-smartest-machine-on-earth/)). Therefore, when I talk about big data in this comparison, I mean files that require swap memory when I load them into my 4GB RAM.*
 
 ## Method <a name="method"></a>
 
 ### The Dataset
 
-How do I get a dataset with 30 000 000 observations? First, I extracted all non-cancelled flights from the [nycflights13](https://github.com/hadley/nycflights13) database, which includes all outbound flights from NYC airports in 2013. This gives me 327 346 observations.
+How do I get a dataset with 30 000 000 observations? First, I extracted all non-cancelled flights from the [nycflights13](https://github.com/hadley/nycflights13) database, which includes all outbound flights from NYC airports in 2013. This gave me 327 346 observations.
 
 The first 10 observations of the dataset:
 
@@ -86,7 +86,7 @@ nyc_flights_big_data[, j=list(mean(air_time), mean(distance)),
              ]
 ```
 
-Now, I compared these three commands by executing each 50 times, where the computation time was recorded by using the tictoc package. For the curious, the execution algorithm can be found [here](Rscripts/Comparison2.R).
+Now, I compared these three commands by executing each 50 times. The computation time was recorded by using the tictoc package. For the curious, the execution algorithm can be found [here](Rscripts/Comparison2.R).
 
 ## Results <a name="results"></a>
 
@@ -96,12 +96,12 @@ _Chart 1_
 
 ![alt text](/images/Comparison2_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
 
-* **`Base R` does not seem to be the right choice for analysing big data**. While your computer is unlikely to hang up or catch fire from using Base R, it is just very slow. Notwithstanding, it is imporatant to mention that big data can be analysed in Base R, which may come as a suprise to people who are new to R.
+* **`Base R` does not seem to be the right choice for analysing big data**. While your computer is unlikely to hang up or catch fire from using Base R, it is just very slow. Notwithstanding, it is imporatant to mention that big data *can* be analysed in Base R, which may come as a suprise to people who are new to R.
 
 * **While both the tidyverse and the data.table package are very fast, the latter is the clear winner.** The average computation time for executing the command was 2.43 sec and 1.17 sec in the tidyverse and data.table respectively. It took the average data.table command a little bit longer than one second to query and transform a dataset with 30 M observations!
 
 ## A few concluding words <a name="conclusion"></a>
 
-From this comparison, the data.table package emerged as a clear winner, which is rather unsurprising, since this package was designed for dealing with huge amounts of data. **Does this mean that one should always use data.table?** Imagine you are working in a position where you have to analyse a fairly large amount of data (say 0.5 M observations) and you are asked to share your work with other people, who are not coders themselves. Now, the tidyverse is clearly the better option as it offers easy-to-read syntaxes that execute quickly.
+From this comparison, the data.table package emerged as the clear winner, which is rather unsurprising, since this package was designed for dealing with huge amounts of data. **Does this mean that one should always use data.table?** Imagine you are working in a position where you have to analyse a fairly large amount of data (say 0.5 M observations) and you are asked to share your work with other people, who are not coders themselves. Now, the tidyverse is clearly the better option as it offers easy-to-read syntaxes that execute quickly.
 
-As was already stated in the introduction, these results apply primarily to data analysis that is performed on ordinary computers. When analysing big big data (say a 500 GB file), the tidyverse package might be too slow (and Base R might not execute a command in the foreseeable future).
+Note: These results apply primarily to data analysis that is performed on ordinary computers. When analysing *big big data* (say a 500 GB file), the tidyverse package might be too slow (and Base R might not execute a command in the foreseeable future).
