@@ -1,4 +1,4 @@
-# Comparison 2: Aggregating a 30M-observations dataset
+# Comparison 2: Aggregating a 30-M-observations dataset
 
 Estimated reading time: 5 min 12 sec
 
