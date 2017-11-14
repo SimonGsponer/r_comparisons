@@ -14,7 +14,7 @@ Hi there and welcome to comparison № 2!
 
 The [World Development Indicators dataset](https://data.worldbank.org/data-catalog/world-development-indicators) of the World Bank, which has about 400 000 rows, is the largest dataset I have ever worked with. While it is certainly too big for MS Excel, it's still far from being big data. For this comparison, I wanted to venture into the (for me personally) uncharted waters of analysing truly big data, which is why I came up with the following question: **How well do Base R, the [tidyverse package](https://www.tidyverse.org/), and the [data.table](https://github.com/Rdatatable/data.table/wiki) package perform when aggregating information from a dataset with 30 million rows?**  
 
-*This comparison revolves around big data—but what is big data in the first place? Unfortunately, there is not really an official definition, but a practical one would describe big data as data that is so large that it doesn't fit into the RAM (the working memory) of your computer. Thus, this means that big data is probably one of the most relative terms of the computer science jargon: whether data is truly big depends one's machine. (My mainstream Apple laptop has 4 GB of RAM, while the supercomputer of IBM has [16 TB of RAM](https://www.csee.umbc.edu/2011/02/is-watson-the-smartest-machine-on-earth/).) Therefore, when I talk about big data in this comparison, I mean files that require swap memory when I load them into my 4GB RAM.*
+*This comparison revolves around big data—but what is big data in the first place? Unfortunately, there is not really an official definition, but a practical one would describe big data as data that is so large that it doesn't fit into the RAM (the working memory) of your computer. Thus, this means that big data is probably one of the most relative terms of the computer science jargon: whether data is truly big depends on one's machine. (My mainstream Apple laptop has 4 GB of RAM, while the supercomputer of IBM has [16 TB of RAM](https://www.csee.umbc.edu/2011/02/is-watson-the-smartest-machine-on-earth/).) Therefore, when I talk about big data in this comparison, I mean files that require swap memory when I load them into my 4GB RAM.*
 
 ## Method <a name="method"></a>
 
@@ -49,7 +49,7 @@ I used my bootstrapper to increase the dataset by about 6.5 M observations. Subs
 * The 327 346 non-cancelled flights that come from the nycflights13 database
 * The roughly 6.5 M observations that were artificially created from the original 327 346 non-cancelled flights, which were duplicated four times in order for achieving the desired dataset size
 
-At first, I wanted to bootstrap all extra observations. However, it turned out that bootstrapping millions of observations is a very time-consuming task, which is why I chose to speed up this process by the use of simple duplication. (We'll definitely come back to bootstrapping later on; I really want to figure out how to build an efficient bootstrapper for big data.) **The final csv file had a size of 1.5 GB and contained 31 408 651 observations. **
+At first, I wanted to bootstrap all extra observations. However, it turned out that bootstrapping millions of observations is a very time-consuming task, which is why I chose to speed up this process by the use of simple duplication. (We'll definitely come back to bootstrapping later on; I really want to figure out how to build an efficient bootstrapper for big data.) **The final csv file had a size of 1.5 GB and contained 31 408 651 observations.**
 
 ### The Task
 
@@ -59,9 +59,9 @@ In Base R, one can figure this out by using the `aggregate()` command:
 
 ```R
 aggregate(nyc_flights_big_data[, c("air_time", "distance")], 
-					by = list(nyc_flights_big_data$carrier), 
-					FUN = mean
-					)
+	by = list(nyc_flights_big_data$carrier), 
+	FUN = mean
+	)
 ```
 
 The first part of the syntax states the columns to be aggregated. In the second part, the `by` argument specifies how the entire dataset should be subsetted (i.e. by carrier). The last part states the functions which should be used for aggregation, which is `mean()`here.
@@ -96,12 +96,12 @@ _Chart 1_
 
 ![alt text](/images/Comparison2_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
 
-* **Base R does not seem to be the right choice for analysing big data**. While your computer is unlikely to hang up or catch fire from using Base R, it is just very slow. Notwithstanding, it is imporatant to mention that big data *can* be analysed in Base R, which may come as a suprise to people who are new to R.
+* **Base R does not seem to be the right choice for analysing big data**. While your computer is unlikely to hang up or catch fire from using Base R, it is very slow. Notwithstanding, it is imporatant to mention that big data *can* be analysed in Base R, which may come as a suprise to people who are new to R.
 
-* **While both the tidyverse and the data.table package are very fast, the latter is the clear winner.** The average computation time for executing the command was 2.43 sec and 1.17 sec in the tidyverse and data.table respectively. It took the average data.table command a little bit longer than one second to query and transform a dataset with 30 M observations!
+* **While both the tidyverse and the data.table package are very fast, the latter is the clear winner.** The average computation time for executing the command was 2.43 sec and 1.17 sec respectively. It took the average data.table command a little bit longer than one second to query and transform a dataset with 30 M observations!
 
 ## A few concluding words <a name="conclusion"></a>
 
-From this comparison, the data.table package emerged as the clear winner, which is rather unsurprising, since this package was designed for dealing with huge amounts of data. **Does this mean that one should always use data.table?** Imagine you are working in a position where you have to analyse a fairly large amount of data (say 0.5 M observations) and you are asked to share your work with other people who are not programmers themselves. Now, the tidyverse is clearly the better option as it offers easy-to-read syntaxes that execute quickly.
+From this comparison, the data.table package emerged as the clear winner, which is rather unsurprising since this package was designed for dealing with huge amounts of data. **Does this mean that one should always use data.table for such tasks?** Imagine you are working in a position where you have to analyse a fairly large amount of data (say 0.5 M observations) and you are asked to share your work with other people who are not programmers themselves. Now, the tidyverse is clearly the better option as it offers easy-to-read syntaxes that execute quickly.
 
 Note: These results apply primarily to data analyses that are performed on ordinary computers. When analysing *big big data* (say a 500 GB file), the tidyverse package might be too slow (and Base R might not execute a command in the foreseeable future).
