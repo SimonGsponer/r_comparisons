@@ -3,8 +3,5 @@
 ### Comparison 1: data.frame() vs. tibble() vs. data.table()
 The first comparison investigates whether data.frames, tibbles, and data.tables differ in the computational time they need for creating a dataset with random numbers. Read the post [here](1_creating_a_dataset_DF_TBL_DT.md).
 
-### Sources
-
-1. Wickham H. Advanced R: Optimising Code. n.d. Retrieved from: [http://adv-r.had.co.nz/Profiling.html](http://adv-r.had.co.nz/Profiling.html)
-
-2. Wickham H., G. Grolemund. R for Data Science. 2017. Retreived from: [http://r4ds.had.co.nz/index.html](http://r4ds.had.co.nz/index.html)
+### Comparison 2: aggregating big data—Base R vs the tidyverse package vs the data.table package
+Comparison № 2 assesses the performance of Base R, the tidyverse package, and the data.table package in running an aggregation command for big data. Read the post [here](2_aggregating_big_data.md).
