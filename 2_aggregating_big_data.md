@@ -42,14 +42,14 @@ The first 10 observations of the dataset:
 ```
 *(Note: I omitted the rows 'origin', 'dest', 'tailnum', 'hour', 'minute', 'time_hour' as I would not use them later on.)*
 
-Now, I coded my own boostrapping algorithm to artificially inflate the dataset. Basically, boostrapping is to continuously resample with replacement. Accordingly, the probability of an observation of the original dataset to be duplicated is **always** 1/(the number of all observations). I'll spare you guys the details about bootstrapping since they are not that relevant right now; also, I plan to do an R comparison about building an efficient bootstrapper anyways.
+Now, I coded my own bootstrapping algorithm to artificially inflate the dataset. Basically, bootstrapping is to continuously resample with replacement. Accordingly, the probability of an observation of the original dataset to be duplicated is **always** 1/(the number of all observations). I'll spare you guys the details about bootstrapping since they are not that relevant right now; also, I plan to do an R comparison about building an efficient bootstrapper anyways.
 
 I used my bootstrapper to increase the dataset by about 6.5 M observations. Subsequently, I duplicated these 6.5 M 'extra' observations four times, which gave me a > 30 M dataset. Thus, the dataset I used for the subsequent analysis consisted of:
 
 * The 327 346 non-cancelled flights that come from the nycflights13 database
 * The roughly 6.5 M observations that were artificially created from the original 327 346 non-cancelled flights, which were duplicated four times in order for achieving the desired dataset size
 
-At first, I wanted to bootstrap all extra observations. However, it turned out that bootstrapping millions of observations is a very time-consuming task, which is why I chose to speed up this process by the use of simple duplication. (We'll definitely come back to boostrapping later on; I really want to figure out how to build an efficient bootstrapper for big data.) Eventually, the final csv file had a size of 1.5 GB and contained 31 408 651 observations. 
+At first, I wanted to bootstrap all extra observations. However, it turned out that bootstrapping millions of observations is a very time-consuming task, which is why I chose to speed up this process by the use of simple duplication. (We'll definitely come back to bootstrapping later on; I really want to figure out how to build an efficient bootstrapper for big data.) Eventually, the final csv file had a size of 1.5 GB and contained 31 408 651 observations. 
 
 ### The Task
 
