@@ -94,7 +94,7 @@ The chart below shows the average computation time (the "whiskers" represent 95%
 
 _Chart 1_
 
-![alt text](/images/Comparison2_Results1.jpeg "Computation Time for Creating a 3-Column Dataset")
+![alt text](/images/Comparison2_Results1.jpeg "Comparison 2: Results")
 
 * **Base R does not seem to be the right choice for analysing big data**. While your computer is unlikely to hang up or catch fire from using Base R, it is very slow. Notwithstanding, it is imporatant to mention that big data *can* be analysed in Base R, which may come as a suprise to people who are new to R.
 
