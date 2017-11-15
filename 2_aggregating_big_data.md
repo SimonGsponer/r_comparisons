@@ -71,8 +71,8 @@ In the tidyverse, the following command is used:
 ```R
 nyc_flights_big_data %>% 
 	group_by(carrier) %>% 
-	summarise(average_dist = mean(distance)
-		, average_time = mean(air_time)
+	summarise(average_dist = mean(distance),
+		  average_time = mean(air_time)
 	)
 ```
 
