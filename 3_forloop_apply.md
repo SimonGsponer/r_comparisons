@@ -87,7 +87,7 @@ The chart below shows the average computation time (the "whiskers" represent 95%
 
 _Chart 1_
 
-![alt text](/images/Comparison3_Results1.jpeg "Comparison 3: Results")
+![alt text](/images/Comparison3_Result1.jpeg "Comparison 3: Results")
 
 * For the computationally simple task, using one core is more efficient than using several ones. When a task is assigned to more than one core, your computer has to do additional tasks for managing the work across the cores. These additional tasks, often referred to as *overhead* in this context, make the single-core environment faster.
 
