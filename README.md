@@ -6,5 +6,5 @@ The first comparison investigates whether data.frames, tibbles, and data.tables 
 ### Comparison 2: aggregating big data—Base R vs the tidyverse package vs the data.table package
 Comparison № 2 assesses the performance of Base R, the tidyverse package, and the data.table package when running an aggregation command for big data. Read the post [here](2_aggregating_big_data.md).
 
-### Comparison 3: for loops vs. apply functions in a multi-core environment
+### Comparison 3: for loops vs apply functions in a multi-core environment
 When vectorising a function, the general consensus is that `for loops` and `apply functions` do equally well. However, this applies only to the case where one core of your CPU is used for all the computations. Episode 3 of R comparisons investigates whether there is a difference between these two approaches when the work is done by several cores. Read the post [here](3_forloop_apply.md).
