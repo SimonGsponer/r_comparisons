@@ -84,8 +84,6 @@ For the computationally simple task, I computed the 3-day moving average. For th
 The chart below shows the average computation time (the "whiskers" represent 95% confidence intervals of the average time) the `for loops`
  and the `apply functions` required for the simple/complex task in a single-core/multi-core environment:
 
-_Chart 1_
-
 ![alt text](/images/Comparison3_Result1.jpeg "Comparison 3: Results")
 
 * For the computationally simple task, using one core is more efficient. When a task is assigned to more than one core, your computer has to do additional tasks for managing the work across the cores. These additional tasks, often referred to as *overhead*, make the single-core environment faster.
