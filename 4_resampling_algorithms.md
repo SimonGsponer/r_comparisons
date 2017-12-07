@@ -30,7 +30,7 @@ The illustration below shows the same information more visually:
 
 ![illustration 1](/images/Comparison4_Illustration1.jpg "Illustration 1")
 
-Back in Comparison 2, I had already realised that this algorithm could probably be improved, given the enormous amount of time it took to resample the observations. I improved this algorithm by i) re-building it in the `[data.table](https://cran.r-project.org/web/packages/data.table/index.html) package and ii) using 3 cores of my 4-core CPU to do the resampling. 
+Back in Comparison 2, I had already realised that this algorithm could probably be improved, given the enormous amount of time it took to resample the observations. I improved this algorithm by i) re-building it in the [`data.table`](https://cran.r-project.org/web/packages/data.table/index.html)` package and ii) using 3 cores of my 4-core CPU to do the resampling. 
 
 Illustration #2 shows the design of the improved version:
 
@@ -66,7 +66,7 @@ Overall, I am going to compare 5 resampling algorithms at first:
 
 5. The parallelised version of 'data.table' ('parallelised data.table')
 
-This first round compares the 5 algorithms when resampling 10 000 observations of the `nycflights13:flights` dataset. As before, I used the `[tictoc](https://cran.r-project.org/web/packages/tictoc/index.html) package` for recording the computational time required, where each resampling algorithm was executed 5 times.
+This first round compares the 5 algorithms when resampling 10 000 observations of the `nycflights13:flights` dataset. As before, I used the [`tictoc`](https://cran.r-project.org/web/packages/tictoc/index.html) package` for recording the computational time required, where each resampling algorithm was executed 5 times.
 
 ## First Results <a name="results1"></a>
 
