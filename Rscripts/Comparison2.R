@@ -1,12 +1,12 @@
-########### BOOTSTRAPPING ALGORITHM ###########
+########### RESAMPLING ALGORITHM ###########
 
-library(tidyverse) #the bootstrapping algorithm is dependend upon the tidyverse package
+library(tidyverse) #the resampling algorithm is dependend upon the tidyverse package
 
 #example:
-bootstrapping_algorithm(nyc_flights_tbl, 2000)
+resampling_algorithm(nyc_flights_tbl, 2000)
 
 
-bootstrapping_algorithm <- function(tibble_data, num_of_duplications){
+resampling_algorithm <- function(tibble_data, num_of_duplications){
   #row_count serves as an input for duplication_vector, specifies the range for resampling
   row_count <- nrow(tibble_data)
   #the duplication_vector generates random numbers representing the row indices of the observation to be resampled
