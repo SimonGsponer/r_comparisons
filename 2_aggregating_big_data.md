@@ -42,14 +42,16 @@ The first 10 observations of the dataset:
 ```
 *(Note: I omitted the rows 'origin', 'dest', 'tailnum', 'hour', 'minute', 'time_hour' as I will not use them later on.)*
 
-Now, I coded my own **bootstrapping algorithm** to artificially inflate the dataset. Basically, bootstrapping is to continuously resample with replacement. Accordingly, the probability of an observation of the original dataset to be duplicated is **always 1/(the number of all observations)**. I'll spare you guys the details about bootstrapping since they are not that relevant right now; also, I plan to do an R comparison about building an efficient bootstrapper anyways.
+Now, I coded my own **resampling algorithm** to artificially inflate the dataset, where I used resampling with replacement. Accordingly, the probability of an observation of the original dataset to be duplicated is **always 1/(the number of all observations)**.
 
-I used my bootstrapper to increase the dataset by about 6.5 M observations. Subsequently, I duplicated these 6.5 M 'extra' observations four times, which gave me a > 30 M dataset. Thus, the dataset I used for the subsequent analysis consisted of:
+I used my resampling algorithm to increase the dataset by about 6.5 M observations. Subsequently, I duplicated these 6.5 M 'extra' observations four times, which gave me a > 30 M dataset. Thus, the dataset I used for the subsequent analysis consisted of:
 
 * The 327 346 non-cancelled flights that come from the nycflights13 database
 * The roughly 6.5 M observations that were artificially created from the original 327 346 non-cancelled flights, which were duplicated four times in order for achieving the desired dataset size
 
-At first, I wanted to bootstrap all extra observations. However, it turned out that bootstrapping millions of observations is a very time-consuming task, which is why I chose to speed up this process by the use of simple duplication. (We'll definitely come back to bootstrapping later on; I really want to figure out how to build an efficient bootstrapper for big data.) **The final csv file had a size of 1.5 GB and contained 31 408 651 observations.**
+At first, I wanted to resample all extra observations. However, it turned out that resampling millions of observations is a very time-consuming task, which is why I chose to speed up this process by the use of simple duplication. (We'll definitely come back to resampling later on; I really want to figure out how to build an efficient resampling algorithm for big data.) **The final csv file had a size of 1.5 GB and contained 31 408 651 observations.**
+
+UPDATE: #4 of r_comparisons deals with resampling algorithms, check it out [here](4_resampling_algorithms.md).
 
 ### The Task
 
@@ -86,7 +88,7 @@ nyc_flights_big_data[, j=list(mean(air_time), mean(distance)),
              ]
 ```
 
-Now, I **compared these three commands by executing each 50 times**. The computation times were recorded by using the [tictoc package](https://cran.r-project.org/web/packages/tictoc/index.html). For the curious, the execution algorithm as well as the bootstrapping algorithm can be found [here](Rscripts/Comparison2.R).
+Now, I **compared these three commands by executing each 50 times**. The computation times were recorded by using the [tictoc package](https://cran.r-project.org/web/packages/tictoc/index.html). For the curious, the execution algorithm as well as the resampling algorithm can be found [here](Rscripts/Comparison2.R).
 
 ## Results <a name="results"></a>
 
