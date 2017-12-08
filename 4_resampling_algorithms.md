@@ -5,8 +5,8 @@ Estimated reading time: 5 min 30 sec
 Overview
 1. [Intro](#introduction)
 2. [The Resampling Algorithms](#method)
-3. [First Results](#results1)
-3. [Second Results](#results2)
+3. [Round One](#results1)
+3. [Round Two](#results2)
 4. [A few concluding words](#conclusion)
 
 ## Intro <a name="introduction"></a>
@@ -68,7 +68,7 @@ Overall, I am going to compare 5 resampling algorithms at first:
 
 This first round compares the 5 algorithms when resampling 10 000 observations of the `nycflights13::flights` dataset. As before, I used the [`tictoc`](https://cran.r-project.org/web/packages/tictoc/index.html)` package` for recording the computational time required, where each resampling algorithm was executed 5 times.
 
-## First Results <a name="results1"></a>
+## Round One <a name="results1"></a>
 
 The chart below shows the average computational time (the "whiskers" represent 95% confidence intervals of the average time) the 5 algorithms required for this task:
 
@@ -76,7 +76,7 @@ The chart below shows the average computational time (the "whiskers" represent 9
 
 Well, this is somewhat embarrassing for me. The solutions I came up with initially ('Comparison 2' & 'Comparison 2 more efficient') perform horribly compared to the others. No wonder it took me ages to resample the dataset in Comparison 2: The algorithm I used is simply a synonym for inefficiency.
 
-## Second Results <a name="results2"></a>
+## Round Two <a name="results2"></a>
 
 But how do my other specifications compare to andreister's approach? For this, I ran a second comparison, in which I let the algorithms resample 100, 1 000, 10 000, 100 000, 1 000 000, and 10 000 000 observations of the `nycflights13::flights` dataset; where each algorithm was executed 10 times for the given number of resampled observations. The results are:
 
