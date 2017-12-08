@@ -11,7 +11,7 @@ Overview
 
 ## Intro <a name="introduction"></a>
 
-In [Comparison 2](3_forloop_apply.md), I used a resampling algorithm to artificially increase the number of observations of the [`nycflights13:flights`](https://github.com/hadley/nycflights13) dataset. It struck me that the resampling process took a lot of time, which prompted me to compare different resampling algorithms in this episode of r_comparisons. In case you are interested in the coding, click [here]().
+In [Comparison 2](3_forloop_apply.md), I used a resampling algorithm to artificially increase the number of observations of the [`nycflights13::flights`](https://github.com/hadley/nycflights13) dataset. It struck me that the resampling process took a lot of time, which prompted me to compare different resampling algorithms in this episode of r_comparisons. In case you are interested in the coding, click [here]().
 *(Note: When I am talking about **resampling** in this comparison, I mean **resampling with replacement**. When resampling with replacement, the probability of a given row to be resampled is always 1/(the total number of rows).)*
 
 ## The Resampling Algorithms <a name="method"></a>
@@ -66,7 +66,7 @@ Overall, I am going to compare 5 resampling algorithms at first:
 
 5. The parallelised version of 'data.table' ('parallelised data.table')
 
-This first round compares the 5 algorithms when resampling 10 000 observations of the `nycflights13:flights` dataset. As before, I used the [`tictoc`](https://cran.r-project.org/web/packages/tictoc/index.html)` package` for recording the computational time required, where each resampling algorithm was executed 5 times.
+This first round compares the 5 algorithms when resampling 10 000 observations of the `nycflights13::flights` dataset. As before, I used the [`tictoc`](https://cran.r-project.org/web/packages/tictoc/index.html)` package` for recording the computational time required, where each resampling algorithm was executed 5 times.
 
 ## First Results <a name="results1"></a>
 
@@ -78,7 +78,7 @@ Well, this is somewhat embarrassing for me. The solutions I came up with initial
 
 ## Second Results <a name="results2"></a>
 
-But how do my other specifications compare to andreister's approach? For this, I ran a second comparison, in which I let the algorithms resample 100, 1 000, 10 000, 100 000, 1 000 000, and 10 000 000 observations of the `nycflights13:flights` dataset; where each algorithm was executed 10 times for the given number of resampled observations. The results are:
+But how do my other specifications compare to andreister's approach? For this, I ran a second comparison, in which I let the algorithms resample 100, 1 000, 10 000, 100 000, 1 000 000, and 10 000 000 observations of the `nycflights13::flights` dataset; where each algorithm was executed 10 times for the given number of resampled observations. The results are:
 
 ![alt text](/images/Comparison4_Result2.jpeg "Comparison 4: Second Results")
 
