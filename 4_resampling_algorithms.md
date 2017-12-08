@@ -12,7 +12,7 @@ Overview
 ## Intro <a name="introduction"></a>
 
 In [Comparison 2](2_aggregating_big_data.md), I used a resampling algorithm to artificially increase the number of observations of the [`nycflights13::flights`](https://github.com/hadley/nycflights13) dataset. It struck me that the resampling process took a lot of time, which prompted me to compare different resampling algorithms in this episode of r_comparisons. In case you are interested in the coding, click [here](Rscripts/Comparison4.R).
-*(Note: When I am talking about **resampling** in this comparison, I mean **resampling with replacement**. When resampling with replacement, the probability of a given row to be resampled is always 1/(the total number of rows).)*
+*(Note: When I am talking about **resampling** in this comparison, I mean **resampling with replacement**, where the probability of a given row to be resampled is always 1/(the total number of rows).)*
 
 ## The Resampling Algorithms <a name="method"></a>
 
